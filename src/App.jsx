@@ -17,8 +17,8 @@ function App() {
 const handleChange=(item,val)=>{
   // setValue({...value,[item]:value[item]+val})
   // setValue(item+val)
-  // if(value.Score>100)return
-  // if(item==="Wickets"&&value.Wickets===12)return
+  if(value.Score>100)return
+  if(item==="Wicket"&&value.Wicket===12)return
   setValue({...value,[item]:value[item]+val})
 }
 
