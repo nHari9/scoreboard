@@ -15,8 +15,11 @@ function App() {
 
 
 const handleChange=(item,val)=>{
-  setValue({...value,[item]:value[item]+val})
+  // setValue({...value,[item]:value[item]+val})
   // setValue(item+val)
+  // if(value.Score>100)return
+  // if(item==="Wickets"&&value.Wickets===12)return
+  setValue({...value,[item]:value[item]+val})
 }
 
 if(useState.Score>=101){
@@ -55,7 +58,7 @@ if(useState.Score>=101){
               // Show Over here in the format: "over.ball" eg: 4.5 means 4th over and 5th ball
               // if 1 more ball is thrown then over is now 5.0
               // you have to write logic to form this string from current ball number.
-              value.Ball
+              Math.floor(value.Ball/6)+"."+value.Ball%6
             }
           </h1>
         </div>
@@ -83,7 +86,7 @@ if(useState.Score>=101){
 
       {/* If score reaches greater than 100, show text "India Won" without quotes in h1 tag with class name 'status' */}
       
-        <h1 className="status">{h1}</h1>
+        <h1 className="status">{value.Score>100 ? "India Won":""}</h1>
       
     </div>
   );
